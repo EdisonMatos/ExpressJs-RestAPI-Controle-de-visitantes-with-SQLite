@@ -4,7 +4,7 @@ import { AdminInterface } from "../../models/interfaces/admin/AdminRequest";
 class CreateAdminService {
   async execute({ email, senha }: AdminInterface) {
     if (!email) {
-      throw new Error("Email incorreto");
+      throw new Error("E-mail incorreto");
     }
 
     const usuarioJaExiste = await prismaClient.admin.findFirst({
